@@ -1,4 +1,4 @@
-<img width="895" height="534" alt="Screenshot 2026-04-16 at 17 00 58" src="https://github.com/user-attachments/assets/cae3dc2b-0d48-4c80-bfc1-63c604c07605" />| 1 | Package build không có warning sau khi thêm dependencies | `colcon build` |
+| 1 | Package build không có warning sau khi thêm dependencies | `colcon build` |
 <img width="1083" height="164" alt="Screenshot 2026-04-16 at 16 41 45" src="https://github.com/user-attachments/assets/88a9ddaf-6640-466a-a3f7-f4909251088a" />
 
 | 2 | `distance_tf_broadcaster` broadcast đủ 2 frame lên `/tf` | `ros2 run tf2_ros tf2_echo base_link sensor_link` |
