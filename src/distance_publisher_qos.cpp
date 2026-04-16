@@ -22,7 +22,7 @@ public:
     // TODO: Tạo publisher best_effort trên '/distance_best_effort'
     pub_best_effort_ = this->create_publisher<std_msgs::msg::Float32>("distance_best_effort", qos_best_effort);
     // TODO: Timer 1 Hz → publishReliable()
-    timer_reliable_ = this->create_wall_timer(std::chrono::milliseconds(1000), std::bind(&DistancePublisherQoS::publishReliable, this));    
+    timer_reliable_ = this->create_wall_timer(std::chrono::seconds(1), std::bind(&DistancePublisherQoS::publishReliable, this));    
     // TODO: Timer 100ms → publishBestEffort()
     timer_best_effort_ = this->create_wall_timer(std::chrono::milliseconds(100), std::bind(&DistancePublisherQoS::publishBestEffort, this));
   }

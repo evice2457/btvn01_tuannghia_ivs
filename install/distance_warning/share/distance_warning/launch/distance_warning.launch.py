@@ -1,13 +1,13 @@
 from launch import LaunchDescription
-from launch.actions import  DeclareLaunchArgument
-from launch_ros.actions import Node
+from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
 
 def generate_launch_description():
     threshold_arg = DeclareLaunchArgument(
         'threshold',
         default_value='0.5',
-        description='Distance threshold in meters'
+        description='Distance warning threshold in meters'
     )
     threshold = LaunchConfiguration('threshold')
 
@@ -20,7 +20,7 @@ def generate_launch_description():
         ),
         Node(
             package='distance_warning',
-            executable= 'distance_listener',
+            executable='distance_listener',
             name='distance_listener',
             parameters=[{'threshold': threshold}]
         ),
@@ -35,5 +35,5 @@ def generate_launch_description():
             executable='distance_action_server',
             name='distance_action_server',
             parameters=[{'threshold': threshold}]
-        )
+        ),
     ])
